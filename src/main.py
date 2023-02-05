@@ -1,6 +1,9 @@
 '''This python library allows for a list function output for the user to use arrow keys to move up & down menu items.'''
 import inquirer
 
+'''Import file for function: create_employee to run.'''
+from create_employee import create_employee
+
 print("\n")
 print("Welcome to the 'Initech 'Employee Application Database.")
 
@@ -21,7 +24,7 @@ def main_menu():
     if answers["Menu Options"] == "List an Employee":
         pass
     if answers["Menu Options"] == "Create an Employee":
-        pass 
+        create_employee() 
     if answers["Menu Options"] == "Edit an existing Employee":
         pass
     if answers["Menu Options"] == "Delete an existing Employee":

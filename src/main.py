@@ -4,6 +4,9 @@ import inquirer
 '''Import file for function: create_employee to run.'''
 from create_employee import create_employee
 
+'''Import file for function: list_all_employees to run'''
+from list_all_employees import list_all_employees
+
 print("\n")
 print("Welcome to the 'Initech 'Employee Application Database.")
 
@@ -20,7 +23,7 @@ def main_menu():
     answers = inquirer.prompt(questions)
     
     if answers["Menu Options"] == "Display all Employees":
-        pass
+        list_all_employees()
     if answers["Menu Options"] == "List an Employee":
         pass
     if answers["Menu Options"] == "Create an Employee":

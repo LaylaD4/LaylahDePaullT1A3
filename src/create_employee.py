@@ -7,6 +7,9 @@ from check_inputs import check_for_valid_string, check_for_valid_number
 '''Import file for function list_employees to run'''
 from list_employee import list_employee
 
+'''Allows the user to return to the main menu.'''
+from return_main_menu import ask_return_main_menu
+
 '''Allows user to create an entirely new instance of an employee and add it to the employee_list.'''
 def create_employee():
     name = check_for_valid_string("Please enter the employee's name:\n").title() 
@@ -22,4 +25,6 @@ def create_employee():
 
     '''Confirm to the user the employee instance was created.'''
     print(f"\nYou have successfully added '{employee.name}' to the Employee Database.\n")
-    list_employee(employee)        
+    list_employee(employee) 
+
+    ask_return_main_menu()       

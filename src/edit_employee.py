@@ -62,7 +62,7 @@ def edit_employee_attributes(employee):
         employee.role = new_role
     if new_salary != "":
         employee.salary = new_salary
-    print("\nYour newly edited employee: '{employee.name}' is listed below:\n")
+    print(f"\nYour newly edited employee: '{employee.name}' is listed below:\n")
     list_employee(employee)
     edit_employee()
     ask_return_main_menu()

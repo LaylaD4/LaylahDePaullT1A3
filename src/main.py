@@ -7,6 +7,9 @@ from create_employee import create_employee
 '''Import file for function: list_all_employees to run'''
 from list_all_employees import list_all_employees
 
+'''Import file for function: create_employee to run.'''
+from edit_employee import edit_employee
+
 print("\n")
 print("Welcome to the 'Initech 'Employee Application Database.")
 
@@ -29,7 +32,7 @@ def main_menu():
     if answers["Menu Options"] == "Create an Employee":
         create_employee() 
     if answers["Menu Options"] == "Edit an existing Employee":
-        pass
+        edit_employee()
     if answers["Menu Options"] == "Delete an existing Employee":
         pass
     if answers["Menu Options"] == "Employee Data Statistics":

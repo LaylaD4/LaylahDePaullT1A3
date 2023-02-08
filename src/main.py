@@ -16,6 +16,9 @@ from delete_employee import delete_employee
 '''Import file for function: list_one_employee to run.'''
 from list_one_employee import list_one_employee
 
+'''Import file for function: data_statistics_search to run'''
+from data_statistics_search import data_statistics_search
+
 print("\n")
 print("Welcome to the 'Initech 'Employee Application Database.")
 
@@ -42,7 +45,7 @@ def main_menu():
     if answers["Menu Options"] == "Delete an existing Employee":
         delete_employee()
     if answers["Menu Options"] == "Employee Data Statistics":
-        pass 
+        data_statistics_search()
     if answers["Menu Options"] == "Print Employee List to File":
         pass
     if answers["Menu Options"] == "Exit Database":  

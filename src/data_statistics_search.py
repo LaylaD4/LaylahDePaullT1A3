@@ -1,9 +1,35 @@
+'''This allows for a list function output for user to scroll up & down through.'''
+import inquirer
+
 '''Import file for access to employee_list'''
 from employee import employee_list
 
+'''Allows the user to return to the main menu.'''
+from return_main_menu import go_back_to_main_menu
+
 '''Allows user to select menu option.'''
 def data_statistics_search():
-    pass
+    print("\n")
+    print("GENERAL EMPLOYEE DATA") 
+    print("\n")
+
+    questions = [
+    inquirer.List(
+        "Menu Options",
+        message="Please select from the following options using the arrow keys, and press enter.",
+        choices=["Display How Many Employee's Work for Initech", "Calculate Average Age of an Employee at Initech", "Calcaluate Average Salary of an Employee at Initech", "Return To Main Menu"],)]
+    answers = inquirer.prompt(questions)
+    
+    if answers["Menu Options"] == "Display How Many Employee's Work for Initech":
+        display_number_of_employees()
+    if answers["Menu Options"] == "Calculate Average Age of an Employee at Initech":
+        calculate_avg_age_of_employees()
+    if answers["Menu Options"] == "Calcaluate Average Salary of an Employee at Initech":
+       calculate_avg_salary_of_employees()
+    if answers["Menu Options"] == "Return To Main Menu":
+       go_back_to_main_menu()   
+    else:
+        data_statistics_search()
 
 '''Function to calculate number of employees in database (employee_list).'''
 def display_number_of_employees():
@@ -46,4 +72,6 @@ def calculate_avg_salary_of_employees():
         return final_result
     except TypeError:
         data_statistics_search()
+
+
 

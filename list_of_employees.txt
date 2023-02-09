@@ -1,0 +1,32 @@
+Initech Employee Database
+
+Employee 1:
+ Name: Luke Smith
+ Age: 20
+ Role: Developer
+ Salary: 100000 
+
+Employee 2:
+ Name: Hannah Norton
+ Age: 25
+ Role: Graphic Design
+ Salary: 80000 
+
+Employee 3:
+ Name: Eric Wilson
+ Age: 34
+ Role: Management
+ Salary: 120000 
+
+Employee 4:
+ Name: Elise Sorensen
+ Age: 25
+ Role: Developer
+ Salary: 100000 
+
+Employee 5:
+ Name: Omar Turan
+ Age: 35
+ Role: Sales
+ Salary: 120000 
+

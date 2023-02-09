@@ -19,6 +19,9 @@ from list_one_employee import list_one_employee
 '''Import file for function: data_statistics_search to run'''
 from data_statistics_search import data_statistics_search
 
+'''Import file for function: print_employee_list to run'''
+from print_employee_list import print_employee_list
+
 print("\n")
 print("Welcome to the 'Initech 'Employee Application Database.")
 
@@ -47,7 +50,7 @@ def main_menu():
     if answers["Menu Options"] == "Employee Data Statistics":
         data_statistics_search()
     if answers["Menu Options"] == "Print Employee List to File":
-        pass
+        print_employee_list()
     if answers["Menu Options"] == "Exit Database":  
         exit()    
     else:

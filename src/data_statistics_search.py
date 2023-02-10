@@ -7,10 +7,13 @@ from employee import employee_list
 '''Allows the user to return to the main menu.'''
 from return_main_menu import go_back_to_main_menu
 
+'''Centres output in terminal'''
+from print_centre import print_centre
+
 '''Allows user to select menu option.'''
 def data_statistics_search():
     print("\n")
-    print("GENERAL EMPLOYEE DATA") 
+    print_centre("GENERAL EMPLOYEE DATA") 
     print("\n")
 
     questions = [

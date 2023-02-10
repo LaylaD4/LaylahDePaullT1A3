@@ -10,9 +10,12 @@ from datetime import date
 '''Import system() method to allows you to execute the cat shell script in python file.'''
 import os
 
+'''Centres output in terminal'''
+from print_centre import print_centre
+
 def print_employee_list():
     print("\n")
-    print("PRINT EMPLOYEE LIST TO FILE")
+    print_centre("PRINT EMPLOYEE LIST TO FILE")
     print("\n")
     text_file = open("list_of_employees.txt", "w")
     num = 0
@@ -24,6 +27,6 @@ def print_employee_list():
         entry = f"Employee {num}:\n Name: {employee.name}\n Age: {employee.age}\n Role: {employee.role}\n Salary: {employee.salary} \n\n"
         text_file.write(entry)
     text_file.close()
-    print("Congratulations; your 'Initech Employee Database' list has now been printed successfully to the file: 'list_of_employees.txt'. Below is a copy of what is printed in that text file:\n") 
+    print_centre("Congratulations; your 'Initech Employee Database' list has now been printed successfully to the file: 'list_of_employees.txt'. Below is a copy of what is printed in that text file:\n") 
     os.system("cat list_of_employees.txt")
     ask_return_main_menu()

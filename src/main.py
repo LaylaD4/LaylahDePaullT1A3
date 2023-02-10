@@ -22,12 +22,15 @@ from data_statistics_search import data_statistics_search
 '''Import file for function: print_employee_list to run'''
 from print_employee_list import print_employee_list
 
+'''Centres output in terminal'''
+from print_centre import print_centre
+
 print("\n")
-print("Welcome to the 'Initech 'Employee Application Database.")
+print_centre("Welcome to the 'Initech 'Employee Application Database.")
 
 def main_menu():
     print("\n")
-    print("MAIN MENU") 
+    print_centre("MAIN MENU") 
     print("\n")
     
     questions = [

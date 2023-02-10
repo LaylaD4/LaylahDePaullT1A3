@@ -7,6 +7,9 @@ from employee import employee_list
 '''Allows the user to return to the main menu.'''
 from return_main_menu import go_back_to_main_menu
 
+'''Centres output in terminal'''
+from print_centre import print_centre
+
 '''Create a way for user to search employee of interest by name.'''
 def employee_search():
     employee_names = []
@@ -14,7 +17,7 @@ def employee_search():
         employee_names.append(employee.name)
     
     print("\n")
-    print("LIST OF EMPLOYEES") 
+    print_centre("LIST OF EMPLOYEES") 
     print("\n")
 
     questions = [

@@ -2,7 +2,7 @@
 from employee_search import employee_search
 
 '''Import file for functions; check_for_valid_string & check_for_valid_number to run'''
-from check_inputs import check_for_valid_string, check_for_valid_number
+from check_inputs import check_for_valid_string, check_for_valid_number, only_letters
 
 '''Import file for function list_employees to run'''
 from list_employee import list_employee
@@ -22,7 +22,7 @@ def edit_employee_attributes(employee):
     new_name = input("Please type new name, or press enter to skip \n").title()
     if new_name != "":
         try:
-            if new_name.isdigit():
+            if only_letters(new_name) == False:
                 raise ValueError("Please re-enter the correct new name of the employee:\n")
             else:
                 new_name
@@ -39,7 +39,7 @@ def edit_employee_attributes(employee):
     new_role = input("Please type new role, or press enter to skip \n").title()
     if new_role != "":
         try:
-            if new_role.isdigit():
+            if only_letters(new_role) == False:
                 raise ValueError("Please re-enter the correct new role of the employee:\n")
             else:
                 new_role

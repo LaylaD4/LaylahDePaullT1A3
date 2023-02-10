@@ -1,3 +1,6 @@
+'''Use regex to check string input'''
+import re 
+
 '''Checks that input from user is a number character, and handles float inputs.'''
 def check_for_valid_number(message):
     number = None

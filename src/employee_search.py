@@ -1,6 +1,11 @@
 '''This allows for a list function output for user to scroll up & down through.'''
 import inquirer
 
+'''This allows for coloured text output in the terminal.'''
+import colorama
+from colorama import Fore, Back, Style
+colorama.init()
+
 '''To search for an employee need to import the list of Employee instances.'''
 from employee import employee_list
 
@@ -17,13 +22,13 @@ def employee_search():
         employee_names.append(employee.name)
     
     print("\n")
-    print_centre("LIST OF EMPLOYEES") 
+    print_centre(f"{Fore.MAGENTA}LIST OF EMPLOYEES") 
     print("\n")
 
     questions = [
     inquirer.List(
         "Employees",
-        message="Please select an employee from the list using the arrow keys, and then press enter.",
+        message=f"{Fore.CYAN}Please select an employee from the list using the arrow keys, and then press enter.",
         choices= employee_names + ["Return to Main Menu"],)]
     selection = inquirer.prompt(questions)
     

@@ -1,6 +1,11 @@
 '''This allows for a list function output for user to scroll up & down through.'''
 import inquirer
 
+'''This allows for coloured text output in the terminal.'''
+import colorama
+from colorama import Fore, Back, Style
+colorama.init(autoreset=True)
+
 '''Import file for access to employee_list'''
 from employee import employee_list
 
@@ -13,13 +18,13 @@ from print_centre import print_centre
 '''Allows user to select menu option.'''
 def data_statistics_search():
     print("\n")
-    print_centre("GENERAL EMPLOYEE DATA") 
+    print_centre(f"{Fore.MAGENTA}GENERAL EMPLOYEE DATA") 
     print("\n")
 
     questions = [
     inquirer.List(
         "Menu Options",
-        message="Please select from the following options using the arrow keys, and press enter.",
+        message=f"{Fore.CYAN}Please select from the following options using the arrow keys, and press enter.",
         choices=["Display How Many Employee's Work for Initech", "Calculate Average Age of an Employee at Initech", "Calcaluate Average Salary of an Employee at Initech", "Return To Main Menu"],)]
     answers = inquirer.prompt(questions)
     
@@ -40,7 +45,7 @@ def display_number_of_employees():
     try:
         for employee in employee_list:
             i = i + 1    
-        print(f"The number of employee's currently employed at Initech is: '{i}'.\n")
+        print(f"{Fore.GREEN}The number of employee's currently employed at Initech is: {Fore.MAGENTA}'{i}'{Fore.GREEN}.\n")
         #data_statistics_search()
         return i
     except TypeError:
@@ -55,7 +60,7 @@ def calculate_avg_age_of_employees():
             i = i + 1
             result = result + employee.age
         final_result = int(result / i)  
-        print(f"The average age of an employee at Initech is: '{final_result}' years.\n")
+        print(f"{Fore.GREEN}The average age of an employee at Initech is: {Fore.MAGENTA}'{final_result}' {Fore.GREEN}years.\n")
         #data_statistics_search()
         return final_result
     except TypeError:
@@ -70,7 +75,7 @@ def calculate_avg_salary_of_employees():
             i = i + 1
             result = result + employee.salary    
         final_result = int(result / i)   
-        print(f"The average salary of an employee at Initech is: '${final_result}' dollars.\n")
+        print(f"{Fore.GREEN}The average salary of an employee at Initech is: {Fore.MAGENTA}'${final_result}' {Fore.GREEN}dollars.\n")
         #data_statistics_search()
         return final_result
     except TypeError:

@@ -1,6 +1,11 @@
 '''This python library allows for a list function output for the user to use arrow keys to move up & down menu items.'''
 import inquirer
 
+'''This allows for coloured text output in the terminal.'''
+import colorama
+from colorama import Fore, Back, Style
+colorama.init(autoreset=True)
+
 '''Import file for function: create_employee to run.'''
 from create_employee import create_employee
 
@@ -26,17 +31,17 @@ from print_employee_list import print_employee_list
 from print_centre import print_centre
 
 print("\n")
-print_centre("Welcome to the 'Initech 'Employee Application Database.")
+print_centre(f"{Fore.GREEN}{Style.BRIGHT}Welcome to the 'Initech' Employee Database Application.")
 
 def main_menu():
     print("\n")
-    print_centre("MAIN MENU") 
+    print_centre(f"{Fore.MAGENTA}MAIN MENU") 
     print("\n")
     
     questions = [
     inquirer.List(
         "Menu Options",
-        message="Please select from the following options using the arrow keys, and press enter.",
+        message=f"{Fore.CYAN}Please select from the following options using the arrow keys, and press enter.",
         choices=["Display all Employees", "List an Employee", "Create an Employee", "Edit an existing Employee", "Delete an existing Employee", "Employee Data Statistics", "Print Employee List to File", "Exit Database"],)]
     answers = inquirer.prompt(questions)
     

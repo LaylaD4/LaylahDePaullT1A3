@@ -1,3 +1,8 @@
+'''This allows for coloured text output in the terminal.'''
+import colorama
+from colorama import Fore, Back, Style
+colorama.init(autoreset=True)
+
 '''Import file for function employee_search to run'''
 from employee_search import employee_search
 
@@ -8,7 +13,7 @@ from list_employee import list_employee
 def list_one_employee():
     employee = employee_search()
     if employee:
-        print("\nEmployee listed:\n")
+        print(f"{Fore.MAGENTA}{Style.BRIGHT}\nEmployee listed:\n")
         list_employee(employee)
         list_one_employee()
 

@@ -1,3 +1,8 @@
+'''This allows for coloured text output in the terminal.'''
+import colorama
+from colorama import Fore, Back, Style
+colorama.init(autoreset=True)
+
 '''Import file for function employee_search to run'''
 from employee_search import employee_search
 
@@ -11,7 +16,7 @@ from list_employee import list_employee
 from return_main_menu import ask_return_main_menu
 
 def edit_employee(): 
-    print("Edit Employee:\n")
+    print(f"{Fore.BLUE}{Style.BRIGHT}\nEdit Employee:")
     employee_exists = employee_search()
     if employee_exists:
         edit_employee_attributes(employee_exists)
@@ -19,17 +24,17 @@ def edit_employee():
 '''Allows user to edit the attributes of the chosen employee.'''
 def edit_employee_attributes(employee):
     # Check for a valid string if input given.
-    new_name = input("Please type new name, or press enter to skip \n").title()
+    new_name = input(f"\n{Fore.CYAN}Please type new name, or press enter to skip: {Fore.BLACK}\n").title()
     if new_name != "":
         try:
             if only_letters(new_name) == False:
-                raise ValueError("Please re-enter the correct new name of the employee:\n")
+                raise ValueError(f"\n{Fore.BLUE}Please re-enter the correct new name of the employee:{Fore.BLACK}\n")
             else:
                 new_name
         except ValueError as warning:
             new_name = check_for_valid_string(warning).title()
     # Check for a valid number if input given.
-    new_age = input("Please type new age, or press enter to skip \n")
+    new_age = input(f"\n{Fore.CYAN}Please type new age, or press enter to skip:{Fore.BLACK}\n")
     if new_age != "":
         try:
             new_age = int(float(new_age))
@@ -38,19 +43,19 @@ def edit_employee_attributes(employee):
             else:
                 raise ValueError
         except ValueError:
-            new_age = check_for_valid_number("Please re-enter the age. Remember it must be a number, and be 18 or above:\n", "age")  
+            new_age = check_for_valid_number(f"\n{Fore.BLUE}Please re-enter the age. Remember it must be a number, and be 18 or above:{Fore.BLACK}\n", "age")  
     # Check for a valid string if input given.
-    new_role = input("Please type new role, or press enter to skip \n").title()
+    new_role = input(f"\n{Fore.CYAN}Please type new role, or press enter to skip:{Fore.BLACK}\n").title()
     if new_role != "":
         try:
             if only_letters(new_role) == False:
-                raise ValueError("Please re-enter the correct new role of the employee:\n")
+                raise ValueError(f"\n{Fore.BLUE}Please re-enter the correct new role of the employee:{Fore.BLACK}\n")
             else:
                 new_role
         except ValueError as warning:
             new_role = check_for_valid_string(warning).title()
     # Check for a valid number if input given.
-    new_salary = input("Please type new salary, or press enter to skip \n")
+    new_salary = input(f"\n{Fore.CYAN}Please type new salary, or press enter to skip:{Fore.BLACK}\n")
     if new_salary != "":
         try:
             new_salary = int(float(new_salary))
@@ -59,7 +64,7 @@ def edit_employee_attributes(employee):
             else:
                 raise ValueError
         except ValueError:
-            new_salary = check_for_valid_number("Please re-enter the salary. Remember it must be a number equal to or above 42000:\n", "salary")  
+            new_salary = check_for_valid_number(f"\n{Fore.BLUE}Please re-enter the salary. Remember it must be a number equal to or above 42000:{Fore.BLACK}\n", "salary")  
    
     '''If a new name, age, role, or salary is entered change it to new_name/age/role/salary.'''
     if new_name != "":
@@ -70,7 +75,7 @@ def edit_employee_attributes(employee):
         employee.role = new_role
     if new_salary != "":
         employee.salary = new_salary
-    print(f"\nYour newly edited employee: '{employee.name}' is listed below:\n")
+    print(f"{Fore.GREEN}\nYour newly edited employee: {Fore.MAGENTA}'{employee.name}'{Fore.MAGENTA} is listed below:\n")
     list_employee(employee)
     edit_employee()
     ask_return_main_menu()

@@ -1,3 +1,8 @@
+'''This allows for coloured text output in the terminal.'''
+import colorama
+from colorama import Fore, Back, Style
+colorama.init(autoreset=True)
+
 '''Import file for access to employee_list and Employee Class.'''
 from employee import Employee, employee_list
 
@@ -12,10 +17,11 @@ from return_main_menu import ask_return_main_menu
 
 '''Allows user to create an entirely new instance of an employee and add it to the employee_list.'''
 def create_employee():
-    name = check_for_valid_string("Please enter the employee's name:\n").title() 
-    age = check_for_valid_number("Please enter the employee's age:\n", "age")
-    role = check_for_valid_string("Please enter the employee's role:\n").title()
-    salary = check_for_valid_number("Please enter the employee's salary:\n", "salary")
+    print(f"\n{Fore.BLUE}{Style.BRIGHT}Create Employee:\n")
+    name = check_for_valid_string(f"\n{Fore.CYAN}Please enter the employee's name:{Fore.BLACK}\n").title() 
+    age = check_for_valid_number(f"\n{Fore.CYAN}Please enter the employee's age:{Fore.BLACK}\n", "age")
+    role = check_for_valid_string(f"\n{Fore.CYAN}Please enter the employee's role:{Fore.BLACK}\n").title()
+    salary = check_for_valid_number(f"\n{Fore.CYAN}Please enter the employee's salary:{Fore.BLACK}\n", "salary")
     employee_list.append(Employee(name, age, role, salary))
 
     '''Return instance of employee just created'''
@@ -24,7 +30,7 @@ def create_employee():
             return employee
 
     '''Confirm to the user the employee instance was created.'''
-    print(f"\nYou have successfully added '{employee.name}' to the Employee Database.\n")
+    print(f"\n{Fore.MAGENTA}You have successfully added {Fore.CYAN}'{employee.name}'{Fore.MAGENTA} to the Employee Database.\n")
     list_employee(employee) 
 
     ask_return_main_menu()       

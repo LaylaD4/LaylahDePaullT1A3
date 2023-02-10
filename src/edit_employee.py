@@ -36,7 +36,7 @@ def edit_employee_attributes(employee):
             if new_age >= 18:
                 new_age = handle_number_errors(new_age, "age")
             else:
-                new_age = new_age = check_for_valid_number("Please re-enter the age. Remember it must be a number, and be 18 or above:\n", "age")
+                raise ValueError
         except ValueError:
             new_age = check_for_valid_number("Please re-enter the age. Remember it must be a number, and be 18 or above:\n", "age")  
     # Check for a valid string if input given.
@@ -57,7 +57,7 @@ def edit_employee_attributes(employee):
             if new_salary >= 42000:
                 new_salary = handle_number_errors(new_salary, "salary")
             else:
-                new_salary = check_for_valid_number("Please re-enter the salary. Remember it must be a number equal to or above 42000:\n", "salary")
+                raise ValueError
         except ValueError:
             new_salary = check_for_valid_number("Please re-enter the salary. Remember it must be a number equal to or above 42000:\n", "salary")  
    

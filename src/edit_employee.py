@@ -2,7 +2,7 @@
 from employee_search import employee_search
 
 '''Import file for functions; check_for_valid_string & check_for_valid_number to run'''
-from check_inputs import check_for_valid_string, check_for_valid_number, only_letters
+from check_inputs import check_for_valid_string, check_for_valid_number, only_letters, handle_number_errors
 
 '''Import file for function list_employees to run'''
 from list_employee import list_employee
@@ -32,9 +32,13 @@ def edit_employee_attributes(employee):
     new_age = input("Please type new age, or press enter to skip \n")
     if new_age != "":
         try:
-            new_age = int(new_age)
+            new_age = int(float(new_age))
+            if new_age >= 18:
+                new_age = handle_number_errors(new_age, "age")
+            else:
+                new_age = new_age = check_for_valid_number("Please re-enter the age. Remember it must be a number, and be 18 or above:\n", "age")
         except ValueError:
-            new_age = check_for_valid_number("Please re-enter the age. Remember it must be a number:\n")  
+            new_age = check_for_valid_number("Please re-enter the age. Remember it must be a number, and be 18 or above:\n", "age")  
     # Check for a valid string if input given.
     new_role = input("Please type new role, or press enter to skip \n").title()
     if new_role != "":
@@ -49,9 +53,13 @@ def edit_employee_attributes(employee):
     new_salary = input("Please type new salary, or press enter to skip \n")
     if new_salary != "":
         try:
-            new_salary = int(new_salary)
+            new_salary = int(float(new_salary))
+            if new_salary >= 42000:
+                new_salary = handle_number_errors(new_salary, "salary")
+            else:
+                new_salary = check_for_valid_number("Please re-enter the salary. Remember it must be a number equal to or above 42000:\n", "salary")
         except ValueError:
-            new_salary = check_for_valid_number("Please re-enter the salary. Remember it must be a number:\n") 
+            new_salary = check_for_valid_number("Please re-enter the salary. Remember it must be a number equal to or above 42000:\n", "salary")  
    
     '''If a new name, age, role, or salary is entered change it to new_name/age/role/salary.'''
     if new_name != "":

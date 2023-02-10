@@ -13,9 +13,9 @@ from return_main_menu import ask_return_main_menu
 '''Allows user to create an entirely new instance of an employee and add it to the employee_list.'''
 def create_employee():
     name = check_for_valid_string("Please enter the employee's name:\n").title() 
-    age = check_for_valid_number("Please enter the employee's age:\n")
+    age = check_for_valid_number("Please enter the employee's age:\n", "age")
     role = check_for_valid_string("Please enter the employee's role:\n").title()
-    salary = check_for_valid_number("Please enter the employee's salary:\n")
+    salary = check_for_valid_number("Please enter the employee's salary:\n", "salary")
     employee_list.append(Employee(name, age, role, salary))
 
     '''Return instance of employee just created'''

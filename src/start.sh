@@ -30,7 +30,7 @@ echo "It's nice to hear from you $name, you are now logged in to the: 'Initech' 
 # RUN APPLICATION COMMAND WITH ARGUMENT ENTERED:
 python3 main.py $name
 
-# PRINT OUT COPY OF TEXT FILE, ACCOUNT FOR ANY ERROR.
+# PRINT OUT COPY OF TEXT FILE, ACCOUNT FOR ANY ERROR WHEN USER EXITS APP.
 if [[ -e list_of_employees.txt ]]
 then 
     echo "Print-out copy of: list_of_employees.txt:"
@@ -39,4 +39,5 @@ else
     echo "Sorry, file: 'list_of_employees.txt' does not exist" >&2
 fi   
 
-echo "$name, you have successfully logged out the 'Initech' Employee Database Application. See you next time."
+# FINAL MESSAGE AFTER APP EXITED:
+echo "$name, you have successfully logged out of the 'Initech' Employee Database Application. See you next time."

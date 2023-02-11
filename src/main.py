@@ -30,8 +30,26 @@ from print_employee_list import print_employee_list
 '''Centres output in terminal'''
 from print_centre import print_centre
 
+'''Alows for bash script input'''
+from sys import argv
+
+'''Import datetime module to get current date.'''
+from datetime import date
+
+'''Returns full name from bash script'''
+def get_full_name():
+    i = 1
+    name = ""
+    while i < len(argv):
+        name = name + argv[i] + " "
+        i = i + 1
+    return name
+
+# Log in details:
+print(f"\n{Fore.BLACK}{Style.BRIGHT}Logged In: {Fore.BLUE}{get_full_name().title()} \n{Fore.BLACK}{Style.BRIGHT}Date: {Fore.BLUE}{date.today()}")    
+
 print("\n")
-print_centre(f"{Fore.GREEN}{Style.BRIGHT}Welcome to the 'Initech' Employee Database Application.")
+print_centre(f"{Fore.GREEN}{Style.BRIGHT}Hello {Fore.MAGENTA}'{get_full_name().title()}'{Fore.GREEN}Welcome to the 'Initech' Employee Database Application.")
 
 def main_menu():
     print("\n")
@@ -60,9 +78,11 @@ def main_menu():
     if answers["Menu Options"] == "Print Employee List to File":
         print_employee_list()
     if answers["Menu Options"] == "Exit Database":  
+        print(f"\n{Fore.BLACK}{Style.BRIGHT}Logged Out: {Fore.BLUE}{get_full_name().title()} \n{Fore.BLACK}{Style.BRIGHT}Date: {Fore.BLUE}{date.today()}\n")
         exit()    
     else:
         main_menu()
 
 
-main_menu()        
+main_menu()
+

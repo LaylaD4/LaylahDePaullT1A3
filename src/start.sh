@@ -28,7 +28,7 @@ read name
 echo "It's nice to hear from you $name, you are now logged in to the: 'Initech' Employee Database Application."
 
 # RUN APPLICATION COMMAND WITH ARGUMENT ENTERED:
-python3 main.py $name
+python3 src/main.py $name
 
 # PRINT OUT COPY OF TEXT FILE, ACCOUNT FOR ANY ERROR WHEN USER EXITS APP.
 if [[ -e list_of_employees.txt ]]

@@ -49,7 +49,7 @@ def get_full_name():
 print(f"\n{Fore.BLACK}{Style.BRIGHT}Logged In: {Fore.BLUE}{get_full_name().title()} \n{Fore.BLACK}{Style.BRIGHT}Date: {Fore.BLUE}{date.today()}")    
 
 print("\n")
-print_centre(f"{Fore.GREEN}{Style.BRIGHT}Hello {Fore.MAGENTA}'{get_full_name().title()}'{Fore.GREEN}Welcome to the 'Initech' Employee Database Application.")
+print_centre(f"{Fore.GREEN}{Style.BRIGHT}Hello {Fore.MAGENTA}{get_full_name().title()}{Fore.GREEN}Welcome to the 'Initech' Employee Database Application.")
 
 def main_menu():
     print("\n")

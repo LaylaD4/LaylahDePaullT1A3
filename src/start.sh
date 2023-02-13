@@ -6,24 +6,56 @@ then
   echo "OOPS!: 
     This application needs Python 3 to be installed. For a MAC you can download
     it here: https://www.python.org/downloads/ " >&2
+    exit
 else
   echo "Good news you have Python Version 3" >&2
 fi
 
 # INSTALL NEEDED PACKAGES:
 
-pip3 install inquirer
+if ! [[ -x "$(command -v pip3)" ]]
+then
+  pip install inquirer
 
-pip3 install rich
+  pip install rich
 
-pip3 install colorama
+  pip install colorama
 
-pip3 install shutil
+  pip install shutil
+else
+  pip3 install inquirer
+
+  pip3 install rich
+
+  pip3 install colorama
+
+  pip3 install shutil
+fi
+
+
 
 # WELCOME MESSAGE TO COLLECT INPUT FROM USER
-echo "Hello there, to log in to the: 'Initech' Employee Database Application, please enter your name?"
 
-read name
+#Set the prompt for user input
+echo -e "Hello there, to log in to the: 'Initech' Employee Database Application, please enter your name?"
+
+# Initialize the name variable
+name=""
+
+# Start the while loop
+while [ -z "$name" ]; do
+  # Read the user input
+  read name
+
+  # Check if the name is blank
+  if [ -z "$name" ]; then
+    echo "You did not enter your name. Please try again."
+    echo -e "Hello again! To log in to the: 'Initech' Employee Database Application, please enter your name? "
+  fi
+done
+
+# change name variable to be capital case using the awk command.
+name="$(echo $name | awk '{for (i=1;i<=NF;i++) $i=toupper(substr($i,1,1)) substr($i,2)} 1')"
 
 echo "It's nice to hear from you $name, you are now logged in to the: 'Initech' Employee Database Application."
 

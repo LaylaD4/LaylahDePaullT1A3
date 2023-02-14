@@ -24,13 +24,13 @@ then
   pip3 install shutil
   
 else
-  pip3 install inquirer --user
+  sudo pip3 install inquirer --user
 
-  pip3 install rich --user
+  sudo pip3 install rich --user
 
-  pip3 install colorama --user
+  sudo pip3 install colorama --user
 
-  pip3 install shutil --user
+  sudo pip3 install shutil --user
 fi
 
 

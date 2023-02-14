@@ -13,16 +13,8 @@ fi
 
 # INSTALL NEEDED PACKAGES:
 
-if ! [[ -x "$(command -v pip3)" ]]
+if [[ -x "$(command -v pip3)" ]]
 then
-  pip install inquirer
-
-  pip install rich
-
-  pip install colorama
-
-  pip install shutil
-else
   pip3 install inquirer
 
   pip3 install rich
@@ -30,6 +22,15 @@ else
   pip3 install colorama
 
   pip3 install shutil
+  
+else
+  sudo -H pip3 install inquirer
+
+  sudo -H pip3 install rich
+
+  sudo -H pip3 install colorama
+
+  sudo -H pip3 install shutil
 fi
 
 

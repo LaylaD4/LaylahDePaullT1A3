@@ -24,13 +24,11 @@ then
   pip3 install shutil
   
 else
-  sudo pip3 install inquirer --user
-
-  sudo pip3 install rich --user
-
-  sudo pip3 install colorama --user
-
-  sudo pip3 install shutil --user
+  echo "OOPS!: 
+    If you receive an [Errono 13] - 'Could not install packages due to an Environment:Error'. Please
+    refer to the Help Documentation in README for instructions to install python packages individually." >&2
+    exit
+  
 fi
 
 

@@ -13,7 +13,7 @@
 
 ### **CODE STYLING CONVENTIONS APPLICATION WILL ADHERE TO**
 
-To make my code as comprehensible or 'readable'  as possible; not on for my benefit, however for the benefit of others reading my code. I will endeavour to adhere to the python styling guide conventions laid out in *PEP 8*. PEP 8 documentation plays a key role in providing python developers with the fundamental core style conventions that the majoity of Developers agree upon today to abide by. That is; to produce code that is more efficient, and very importantly most readable. Especially since: *"Using a disciplined style of programming will save you time whenever you have to read your program or debug it."*[1]
+To make my code as comprehensible or 'readable'  as possible; not only for my benefit, however for the benefit of others reading my code. I will endeavour to adhere to the python styling guide conventions laid out in *PEP 8*. PEP 8 documentation plays a key role in providing python developers with the fundamental core style conventions that the majoity of Developers agree upon today to abide by. That is; to produce code that is more efficient, and very importantly most readable. Especially since: *"Using a disciplined style of programming will save you time whenever you have to read your program or debug it."*[1]
 
 - **Naming conventions used for functions, classes, variables, & parameters**: For functions, variables, & parameters I have used all lowercase letters with underscores between words. For my class I have used the 'CapWords' style, that is; the class name starts with a capital letter. For all: functions, classes, variables, & parameters, I have used names that describe as accurately as possible what their intended purpose is (functions, classes), or what they are intend to contain (variables, parameters). I have deliberately steered clear of naming or  prefixing any function, class, variable, or parameter with any python keyword, and have avoided using variables or parameters that use single characters such as: lowercase: 'l', & uppercase 'O' or 'I', as they could easily be misinterpreted, and cause issues down the line.
 
@@ -169,7 +169,7 @@ pwd
 ```
 ls
 ```
-- To navigate down to a particular folder or directory; type the command:
+- To navigate down to a particular folder or directory; type the command cd with the folder of choice:
 ```
 cd <folder/directory>
 ```

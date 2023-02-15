@@ -2,7 +2,7 @@
 * [Github - LaylaD4/LaylahDePaull_T1A3](https://github.com/LaylaD4/LaylahDePaull_T1A3)
 
 ### **LINK TO YOUTUBE PRESENATION**
-* [Youtube - Terminal Application Powerpoint Presention]("/")
+* [Youtube - Terminal Application Powerpoint Presention](https://www.youtube.com/watch?v=LRwAXorQLbs)
 
 ### **LINK TO TRELLO IMPLEMENTATION PLAN & SCREENSHOTS**
 * [Trello Board - Terminal Application](https://trello.com/b/rre0vKEN/terminal-application)
@@ -131,7 +131,7 @@ That is; your first prompt will be to enter your name.
 8. Once you exit the application, if you chose to: *"Print Employee List to File"* after making any changes (or not). Those changes will be reflected, and you will have a copy of the newly updated text file: 'list_of_employees.txt' in the folder/directory: LaylahDePaull_T1A3. You can choose to open that  text file on your GUI by double clicking on that folder (LaylahDePaull_T1A3) in your Desktop, and navigating into the 'src' folder where it is stored, or alternatively you can 
 open it from your terminal by simply typing:
 ```
-cat src/cat list_of_employees.txt
+cat src/list_of_employees.txt
 ```
     
 

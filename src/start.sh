@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# CHECK IF PYTHON 3 IS INSTALLED
+# Check If Python 3 is installed.
 if ! [[ -x "$(command -v python3)" ]]
 then
   echo "OOPS!: 
@@ -11,8 +11,7 @@ else
   echo "Good news you have Python Version 3" >&2
 fi
 
-# INSTALL NEEDED PACKAGES:
-
+# Install dependancies.
 if [[ -x "$(command -v pip3)" ]]
 then
   pip3 install inquirer
@@ -28,20 +27,19 @@ else
     If you receive an [Errono 13] - 'Could not install packages due to an Environment:Error'. Please
     refer to the Help Documentation in README for instructions to install python packages individually." >&2
     exit
-  
 fi
 
+# Clear terminal.
 clear
 
-# WELCOME MESSAGE TO COLLECT INPUT FROM USER
 
-#Set the prompt for user input
+# Welcome message to prompt for user input.
 echo -e "Hello there, to log in to the: 'Initech' Employee Database Application, please enter your name?"
 
-# Initialize the name variable
+# Initialize the name variable to store user input.
 name=""
 
-# Start the while loop
+# While loop to ensure user adds input of their name:
 while [ -z "$name" ]; do
   # Read the user input
   read name
@@ -53,16 +51,16 @@ while [ -z "$name" ]; do
   fi
 done
 
-# change name variable to be capital case using the awk command.
+# Change name variable input to be capital case using the awk command.
 name="$(echo $name | awk '{for (i=1;i<=NF;i++) $i=toupper(substr($i,1,1)) substr($i,2)} 1')"
 
 echo "It's nice to hear from you $name, you are now logged in to the: 'Initech' Employee Database Application."
 
 
-# RUN APPLICATION COMMAND WITH ARGUMENT ENTERED:
+# Run python script (application) command with argument of user's input.
 python3 src/main.py $name
 
-# PRINT OUT COPY OF TEXT FILE, ACCOUNT FOR ANY ERROR WHEN USER EXITS APP.
+# Print out copy of text file, account for any error when user exits application.
 if [[ -e list_of_employees.txt ]]
 then 
     echo "Print-out copy of: list_of_employees.txt:"
@@ -71,5 +69,5 @@ else
     echo "Sorry, file: 'list_of_employees.txt' does not exist" >&2
 fi   
 
-# FINAL MESSAGE AFTER APP EXITED:
+# Final message to user in terminal after application exited.
 echo "$name, you have successfully logged out of the 'Initech' Employee Database Application. See you next time."

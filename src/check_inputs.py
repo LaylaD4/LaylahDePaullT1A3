@@ -1,13 +1,18 @@
-'''Use regex to check string input'''
+# Use regex to check just alphabetical letter input.
 import re 
 
-'''This allows for coloured text output in the terminal.'''
+# This allows for coloured text output in the terminal.
 import colorama
 from colorama import Fore, Back, Style
 colorama.init(autoreset=True)
 
-'''Checks that input from user is a number character, and handles float inputs.'''
+
 def check_for_valid_number(message, number_type):
+    """Checks that input from user is a number character, and handles float inputs.
+
+    :param message: A message asking user for either age or salary input.
+    :param number_type: age or salary.
+    """
     number = None
     while number == None:
         try:
@@ -20,8 +25,12 @@ def check_for_valid_number(message, number_type):
         except ValueError:
             print(f"\n{Fore.MAGENTA}You did not enter a valid number. Please try again.\n")
 
-'''Checks that input from user is an alphabet character.'''
+
 def check_for_valid_string(message): 
+    """Checks that input from user is an alphabet character.
+
+    :param message: A message asking user for either name, or role input.
+    """
     entry = ""
     while entry == "":
         entry = input(message)
@@ -39,12 +48,21 @@ def check_for_valid_string(message):
         else:
             return entry
 
-'''Checks that only letters are entered using regex, and re import'''
+
 def only_letters(string):
+    """Checks that only letters are entered using regex, and re import.
+    
+    :param string: user input for name, or role.
+    """
     return bool(re.match("^[a-zA-Z_ ]+$", string)) 
 
-'''Checks that any age or salary entered is over 18, and 42000 respectively'''
+
 def handle_number_errors(number, number_type):
+    """Checks that age or salary entered is over 18 or 42000.
+
+    :param number: The number input from user.
+    :param number_type: age or salary.
+    """
     number = int(number)
     if number >= 18 and number_type == "age":
         return number 

@@ -1,4 +1,4 @@
-# This python library allows for a list function output for the user to use arrow keys to move up & down menu items.
+# This allows for a list function output for the user to use arrow keys to move up & down menu.
 import inquirer
 
 # This allows for coloured text output in the terminal.
@@ -6,7 +6,7 @@ import colorama
 from colorama import Fore, Back, Style
 colorama.init(autoreset=True)
 
-# This allows for shell commands in the terminal
+# This allows for shell commands in the terminal.
 import os
 
 # Import file for function: create_employee to run.
@@ -51,13 +51,15 @@ def get_full_name():
 
 
 def main_menu():
-    """Creates the MAIN MENU options together with external python library inquirer."""
+    """Function creates the MAIN MENU options together with external python library inquirer."""
     os.system('clear')
+    
     print(f"\n{Fore.BLACK}{Style.BRIGHT}Logged In: {Fore.BLUE}{get_full_name().title()} \n{Fore.BLACK}{Style.BRIGHT}Date: {Fore.BLUE}{date.today()}")    
 
     print("\n")
     print_centre(f"{Fore.GREEN}{Style.BRIGHT}Hello {Fore.MAGENTA}{get_full_name().title()}{Fore.GREEN}Welcome to the 'Initech' Employee Database Application.")
     print("\n")
+    
     print_centre(f"{Fore.MAGENTA}MAIN MENU") 
     print("\n")
     

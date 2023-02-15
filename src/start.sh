@@ -31,7 +31,7 @@ else
   
 fi
 
-
+clear
 
 # WELCOME MESSAGE TO COLLECT INPUT FROM USER
 
@@ -57,6 +57,7 @@ done
 name="$(echo $name | awk '{for (i=1;i<=NF;i++) $i=toupper(substr($i,1,1)) substr($i,2)} 1')"
 
 echo "It's nice to hear from you $name, you are now logged in to the: 'Initech' Employee Database Application."
+
 
 # RUN APPLICATION COMMAND WITH ARGUMENT ENTERED:
 python3 src/main.py $name

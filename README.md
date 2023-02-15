@@ -28,7 +28,7 @@ To make my code as comprehensible or 'readable'  as possible; not on for my bene
 
 - **Maximum line length conventions used**: Where possible I have endeavoured to adhere to the custom length of 79 characters per line of code, as to avoid my code being wrapped by text editors in unfavourable locations that make the code less readable.
 
-    [1], [2], [3], [4]
+    [1], [2], [3], [4] (*Attribution to referenced sources*)
 
 
 ### **ATTRIBUTION TO REFERENCED SOURCES**
@@ -37,6 +37,7 @@ To make my code as comprehensible or 'readable'  as possible; not on for my bene
 2. [About Docstrings & Standards](https://pandas.pydata.org/docs/development/contributing_docstring.html#:~:text=A%20Python%20docstring%20is%20a,html%20documentation%20automatically%20from%20docstrings.)
 3. [PEP 257 – Docstring Conventions](https://peps.python.org/pep-0257/)
 4. [PEP 8 – Style Guide for Python Code](https://peps.python.org/pep-0008/)
+5. [System Requirements](https://techterms.com/definition/system_requirements)
 
 ### **FEATURES OF APPLICATION**
 The 'features' or elements listed in the: *'Descriptive overview...'* are an accurate representation of the the functionality that is built into my terminal application. I thought it necessary to include a description of all elements that exist in my application to give the reader context, that is; a full picture of the mechanics of my application. Therefore, I have integrated those features that are 'technically' features into the descriptive overviews below of elements in my app, for the readers ease in understanding the general scope of my work. It is important to note; that not all the elements and their functionality included in my application fufil all three language elements, and concepts of: *'variable scope'*, *'loops & control structures'*, and *error handling*. That is, in particular; 'error handling'; as in some cases due to external imports such as: *'Inquirer'*[iii] have negated the need for *'error handling'* logic to be applied. However most do, and this will become evident in the descriptions made below, and directly pointed to in the summing up of the description.
@@ -131,7 +132,7 @@ That is; your first prompt will be to enter your name.
 8. Once you exit the application, if you chose to: *"Print Employee List to File"* after making any changes (or not). Those changes will be reflected, and you will have a copy of the newly updated text file: 'list_of_employees.txt' in the folder/directory: LaylahDePaull_T1A3. You can choose to open that  text file on your GUI by double clicking on that folder (LaylahDePaull_T1A3) in your Desktop, and navigating into the 'src' folder where it is stored, or alternatively you can 
 open it from your terminal by simply typing:
 ```
-cat src/list_of_employees.txt
+cat list_of_employees.txt
 ```
     
 
@@ -154,7 +155,9 @@ The hardware requirements to run the application are:
   1. Intel Core i5 processor or equivalent
   2. 4GB of RAM
   3. 1GB hard drive space
-  4. Internet connection 
+  4. Internet connection recommended. 
+
+  [5] (*Atrribution of referenced sources*)
 
 -**How to use command line arguments made for the application**:
 
@@ -178,6 +181,22 @@ cd ..
 ```
 control + c
 ```
+
+-**Testing Documentation**:
+
+- Testing dependancies:<br>
+[Pytest Documentation](https://docs.pytest.org/en/7.2.x/)
+
+- To install pytest module; copy and paste the command into your terminal:
+```
+pip3 install -U pytest
+```
+- To run a test using pytest through the command line; copy and paste the command into your terminal when in directory LaylahDePaull_T1A3:
+```
+python3 -m pytest src/test_cases.py
+```
+
+
 
 
 
